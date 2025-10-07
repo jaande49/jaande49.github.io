@@ -56,7 +56,7 @@ body {
   color: var(--ink);
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: capitalize; /* shows as 'Index' */
+  text-transform: capitalize;
   opacity: 0.95;
   text-align: center;
   font-size: 1.25rem;
@@ -144,15 +144,12 @@ main h3 { font-size: 1.5rem; }
   border-radius: 12px;
   border: 1px solid var(--brand-secondary);
 }
-
-/* Optional: clearfix so elements after the section don't wrap under the image */
+/* clearfix */
 .about-section::after {
   content: "";
   display: block;
   clear: both;
 }
-
-/* Remove flex assumptions */
 .about-text { /* no flex here */ }
 
 /* Mobile: stop wrapping and stack */
@@ -165,7 +162,6 @@ main h3 { font-size: 1.5rem; }
     margin: 0 auto 1rem;
   }
 }
-
 
 /* === Values Section === */
 .values {
@@ -213,65 +209,206 @@ button {
 button:hover { opacity: 0.92; }
 
 /* === Tables (for other pages) === */
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-  margin-block: 0.5rem 1rem; 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 0.5rem 1rem;
 }
-th, td { 
-  border: 1px solid #ddd; 
-  padding: 0.5rem; 
-  text-align: left; 
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
 }
-th { 
-  background: var(--brand-secondary); 
-  color: var(--ink); 
+th {
+  background: var(--brand-secondary);
+  color: var(--ink);
 }
-
-/* Make table captions (Drink Menu, Food Menu) bigger */
 table caption {
-  font-size: 1.2rem;     /* bump up size */
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--brand);
   padding-bottom: 0.4rem;
 }
-
-/* Keep both tables compact at the top of the grid column */
-.menu-grid > table {
-  align-self: start;     /* prevents vertical stretch in CSS Grid */
-}
-
-/* Category header row (used by both Drink & Food menus) */
+.menu-grid > table { align-self: start; }
 .menu-category {
   background: var(--brand-secondary);
   color: var(--ink);
   text-align: left;
   font-weight: 700;
-  font-size: 1.05rem;     /* bump up size */
-  padding: 0.5rem;       /* add a little more breathing room */
+  font-size: 1.05rem;
+  padding: 0.5rem;
   border: 1px solid #ddd;
 }
-
-/* Tidy lists inside table cells */
-td ul { 
-  margin: 0; 
-  padding-left: 1.25rem; 
-}
+td ul { margin: 0; padding-left: 1.25rem; }
 
 /* === Featured Video === */
 .featured-video {
-  display: block;          /* lets margin:auto work */
-  margin: 1rem auto;       /* centers horizontally */
+  display: block;
+  margin: 1rem auto;
   width: 100%;
-  max-width: 720px;        /* keeps it from getting too wide */
+  max-width: 720px;
   height: auto;
-  aspect-ratio: 16 / 9;    /* reserves space; prevents layout jump */
+  aspect-ratio: 16 / 9;
   border-radius: 10px;
   border: 1px solid var(--brand-secondary);
   background: #000;
-  object-fit: cover;       /* crop to fill nicely; use 'contain' for letterbox */
+  object-fit: cover;
 }
 
+/* === Community (chart + table) === */
+.community-summary {
+  background: var(--brand-secondary);     /* full secondary color */
+  border: 1px solid var(--brand);         /* adds contrast */
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--ink);                      /* ensures text is readable */
+  font-weight: 500;
+}
+
+/* Chart above table (vertical layout) */
+.chart-table-wrap,
+.chart-table-wrap.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chart-card,
+.table-card {
+  background: var(--surface);
+  border: 1px solid var(--brand-secondary);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Compact, slightly taller chart */
+.chart-card {
+  height: auto;
+  max-height: 320px;
+  margin: 0 auto;              /* center the chart card */
+  text-align: center;
+  width: 100%;
+  max-width: 600px;            /* keep a nice readable width */
+}
+.chart-card canvas {
+  width: 100%;
+  height: 200px;               /* desktop height */
+  max-height: 220px;
+}
+
+.source-note {
+  margin-top: .5rem;
+  color: color-mix(in srgb, var(--ink), white 35%);
+  font-size: 0.9rem;
+}
+
+/* Tighten table look to match theme */
+.table-card table th {
+  background: var(--brand-secondary);
+  color: var(--ink);
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+.table-card table td,
+.table-card table th {
+  border-color: #ddd;
+}
+.table-card table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--brand-secondary) 20%, var(--surface) 80%);
+}
+
+/* === Inspiration split === */
+.inspiration-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+.inspiration-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--brand-secondary);
+}
+.inspiration-textbox {
+  background: var(--surface);
+  border: 1px solid var(--brand-secondary);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* === Page-specific overrides for community.html === */
+#community-title,
+#inspiration-title { color: var(--ink); }       /* h2s black */
+.inspiration-question { color: var(--brand); }  /* brand-colored h3 */
+
+/* === Design Vision Page === */
+.design-textbox {
+  background: var(--surface);
+  border: 1px solid var(--brand-secondary);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  line-height: 1.7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  margin-bottom: 2rem;
+}
+
+/* Make "Design Vision" title black */
+#design-title {
+  color: var(--ink); /* black */
+}
+
+/* Make "Mood Board" title primary brand color */
+.moodboard-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--brand); /* primary color */
+  margin-bottom: 1rem;
+}
+
+/* Grid layout for mood board */
+.moodboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Individual images */
+.moodboard-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--brand-secondary);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.moodboard-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Mobile adjustment */
+@media (max-width: 900px) {
+  .moodboard-grid img {
+    height: 180px;
+  }
+}
+
+ 
 /* === Footer === */
 footer { max-width: 1100px; margin: 1rem auto 2rem; padding: 0 1rem; color: var(--ink); }
 
@@ -279,8 +416,8 @@ footer { max-width: 1100px; margin: 1rem auto 2rem; padding: 0 1rem; color: var(
 @media (max-width: 900px) {
   .overview { grid-template-columns: 1fr; }
   .values { grid-template-columns: 1fr; }
-}
-@media (max-width: 820px) {
   .wrap { grid-template-columns: 1fr; }
   nav { position: relative; top: 0; }
+  .inspiration-split { grid-template-columns: 1fr; }
+  .chart-card canvas { height: 180px; } /* slightly shorter on phones */
 }

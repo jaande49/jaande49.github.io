@@ -1,0 +1,165 @@
+<!-- community.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community & Inspiration — Jessi’s Coffee Co.</title>
+  <link rel="stylesheet" href="coffee.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="logo.png" alt="Jessi’s Coffee Co. logo" class="logo" />
+      <h1>Jessi’s Coffee Co.</h1>
+    </div>
+  </header>
+
+  <!-- Exact casing preserved; CSS has .subheader { text-transform: none; } -->
+  <div class="subheader">Community & Inspiration</div>
+
+  <div class="wrap">
+    <nav aria-label="Primary">
+      <a href="index.html"><strong>Home</strong></a>&nbsp;
+      <a href="about.html"><strong>About Me</strong></a>&nbsp;
+      <a href="menu.html"><strong>Menu and Experience</strong></a>&nbsp;
+      <a href="community.html" aria-current="page"><strong>Community and Inspiration</strong></a>&nbsp;
+      <a href="design.html"><strong>Design Vision</strong></a>
+    </nav>
+
+    <main>
+      <!-- COMMUNITY SECTION -->
+      <section aria-labelledby="community-title" style="margin-top:1rem;">
+        <h2 id="community-title"><strong>Community</strong></h2>
+        <div class="community-summary">
+          <p><strong>Market Research Snapshot:</strong> The global coffee market continues to evolve, driven by younger consumers, innovative brewing trends, and a strong shift toward sustainability. Jessi’s Coffee Co. aligns with these global movements, offering a unique, creative space for people who value both quality and community.</p>
+        </div>
+
+        <!-- Chart ABOVE the Table -->
+        <div class="chart-table-wrap vertical">
+          <figure class="chart-card">
+            <figcaption><strong>Top Drivers of Global Coffee Market Growth (2025)</strong></figcaption>
+            <canvas id="growthChart" aria-label="Bar chart showing key growth drivers and their estimated contribution"></canvas>
+            <p class="source-note"><small>Source: Statista, Mintel, National Coffee Association (2024–2025)</small></p>
+          </figure>
+
+          <div class="table-card" role="region" aria-labelledby="growth-table-title">
+            <h3 id="growth-table-title" style="margin-top:0;"><strong>Key Growth Drivers in the Global Coffee Market (2025)</strong></h3>
+            <table>
+              <caption class="sr-only">Growth drivers, market impact, and example trends in the coffee market.</caption>
+              <thead>
+                <tr>
+                  <th>Growth Driver</th>
+                  <th>Market Impact</th>
+                  <th>Example Trend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Young Consumers (Gen Z & Millennials)</td>
+                  <td>These generations make up ~52% of the global population and are leading innovation in coffee consumption.</td>
+                  <td>Early coffee adoption, social media coffee culture, premium café experiences.</td>
+                </tr>
+                <tr>
+                  <td>Emerging Market Demand</td>
+                  <td>Rapid adoption in parts of Asia & Eastern Europe as disposable income rises.</td>
+                  <td>More cafés in India, China, Thailand; Western-style branding.</td>
+                </tr>
+                <tr>
+                  <td>Product Innovation</td>
+                  <td>New brewing, roasting, and flavor methods keep consumers engaged.</td>
+                  <td>Cold brew, nitro, oat/alt-milks, seasonal flavor pairings.</td>
+                </tr>
+                <tr>
+                  <td>Specialty & Artisan Coffee</td>
+                  <td>Preference for unique taste profiles and origin transparency.</td>
+                  <td>Single-origin espresso, roaster collabs, custom syrups.</td>
+                </tr>
+                <tr>
+                  <td>Functional Benefits</td>
+                  <td>Associations expand from energy to focus, performance, and wellness.</td>
+                  <td>Vitamins/adaptogens in coffee, “focus blend” offerings.</td>
+                </tr>
+                <tr>
+                  <td>Sustainability & Ethical Sourcing</td>
+                  <td>Growing demand for eco-friendly and fair-trade practices.</td>
+                  <td>Compostable cups, carbon-neutral roasting, transparent sourcing.</td>
+                </tr>
+                <tr>
+                  <td>Technology & Convenience</td>
+                  <td>Digital access and personalization via apps, subscriptions, smart devices.</td>
+                  <td>App ordering, loyalty rewards, AI recommendations.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="source-note"><small>Source: Statista, National Coffee Association, Mintel (2024–2025)</small></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSPIRATION SECTION -->
+      <section aria-labelledby="inspiration-title" style="margin-top:2rem;">
+        <h2 id="inspiration-title"><strong>Inspiration</strong></h2>
+        <!-- add class so CSS can make this your brand color -->
+        <h3 class="inspiration-question" style="margin-top:.4rem;">What do we strive for?</h3>
+
+        <div class="inspiration-split" role="group" aria-label="Inspiration content split view">
+          <img src="meal.jpg" alt="Fresh pastry and latte art on a café table, representing Jessi’s Coffee Co. inspiration"/>
+
+          <div class="inspiration-textbox">
+            <p>Jessi’s Coffee Co. aspires to create a welcoming space where people from different corners of the community can gather, connect, and feel at home. Our mission is to serve high-quality coffee and freshly baked treats at fair, accessible prices; offering more than just a drink, but an experience. Whether guests come to study, relax, or catch up with friends, we aim to provide a warm atmosphere that inspires creativity, comfort, and community.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p><small><i>Copyright &copy; 2025 Jessi’s Coffee Co.</i></small></p>
+    <p><small><i>Contact: <a href="mailto:jessi.anderson@example.com">Jessi Anderson</a></i></small></p>
+  </footer>
+
+  <!-- Chart.js (compact bar chart) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Young Consumers & Demographics',
+          'Product Innovation & Specialty',
+          'Sustainability & Ethics',
+          'Emerging Markets',
+          'Functional Benefits',
+          'Technology & Convenience'
+        ],
+        datasets: [{
+          label: 'Estimated Contribution to Market Growth (%)',
+          data: [22, 19, 17, 15, 14, 13],
+          backgroundColor: ['#C69C6D','#B07B57','#8C5E3C','#D3B697','#BFA98B','#A27E5D'],
+          borderColor: '#6F4E37',
+          borderWidth: 1,
+          hoverBackgroundColor: '#6F4E37'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,  // let CSS control height
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Percent Contribution (%)' },
+            ticks: { stepSize: 5 }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: { mode: 'index', intersect: false }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
