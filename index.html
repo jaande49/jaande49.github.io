@@ -65,70 +65,101 @@
 </div>
 
       <!-- Poll form -->
-      <section aria-labelledby="poll-title">
-        <h3 id="poll-title"><strong>Community Poll</strong></h3>
-        <form class="poll" action="https://formspree.io/f/mgvnoarb" method="POST" accept-charset="UTF-8">
-          <input type="hidden" name="_subject" value="Jessi’s Coffee Co. Poll Submission">
+<section aria-labelledby="poll-title">
+  <h3 id="poll-title"><strong>Community Poll</strong></h3>
+  <form class="poll" action="https://formspree.io/f/mgvnoarb" method="POST" accept-charset="UTF-8">
+    <input type="hidden" name="_subject" value="Jessi’s Coffee Co. Poll Submission">
 
-          <div class="field">
-            <label for="name">What is your name?</label>
-            <input id="name" name="name" type="text" maxlength="150" required>
-          </div>
+    <!-- First Name -->
+    <div class="field">
+      <label for="first-name">What is your first name?</label>
+      <input id="first-name" name="first_name" type="text" maxlength="150" required>
+    </div>
 
-          <div class="field">
-            <label for="email">What is your email address?</label>
-            <input id="email" name="email" type="email" maxlength="150" required>
-          </div>
+    <!-- Last Name -->
+    <div class="field">
+      <label for="last-name">What is your last name?</label>
+      <input id="last-name" name="last_name" type="text" maxlength="150" required>
+    </div>
 
-          <div class="field">
-            <label for="drink">What type of coffee or drink do you usually order?</label>
-            <select id="drink" name="drink" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Latte</option>
-              <option>Cappuccino</option>
-              <option>Cold Brew</option>
-              <option>Espresso</option>
-              <option>Tea</option>
-              <option>Other</option>
-            </select>
-            <input id="drink-other" name="drink_other" type="text" maxlength="150" placeholder="If Other, please specify" style="display:none; margin-top:.4rem;">
-          </div>
+    <!-- Email -->
+    <div class="field">
+      <label for="email">What is your email address?</label>
+      <input id="email" name="email" type="email" maxlength="150" required>
+    </div>
 
-          <div class="field">
-            <label for="frequency">How often do you purchase coffee from a café?</label>
-            <select id="frequency" name="frequency" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Daily</option>
-              <option>A few times a week</option>
-              <option>Weekly</option>
-              <option>Occasionally</option>
-              <option>Rarely</option>
-            </select>
-          </div>
+    <!-- Drink Type -->
+    <div class="field">
+      <label for="drink">What type of coffee or drink do you usually order?</label>
+      <select id="drink" name="drink" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Latte</option>
+        <option>Cappuccino</option>
+        <option>Cold Brew</option>
+        <option>Espresso</option>
+        <option>Tea</option>
+        <option>Other</option>
+      </select>
+      <input id="drink-other" name="drink_other" type="text" maxlength="150" placeholder="If Other, please specify" style="display:none; margin-top:.4rem;">
+    </div>
 
-          <div class="field">
-            <label for="spend">On average, how much are you willing to spend on one drink?</label>
-            <select id="spend" name="spend" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Under $3</option>
-              <option>$3–$5</option>
-              <option>$5–$7</option>
-              <option>More than $7</option>
-            </select>
-          </div>
+    <!-- Frequency -->
+    <div class="field">
+      <label for="frequency">How often do you purchase coffee from a café?</label>
+      <select id="frequency" name="frequency" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Daily</option>
+        <option>A few times a week</option>
+        <option>Weekly</option>
+        <option>Occasionally</option>
+        <option>Rarely</option>
+      </select>
+    </div>
 
-          <div class="field">
-            <label for="experience">What do you look for in the perfect coffee shop experience?</label>
-            <textarea id="experience" name="experience" maxlength="150" rows="3" placeholder="Your thoughts (150 characters max)"></textarea>
-            <small class="help">150 character limit</small>
-          </div>
+    <!-- Spend -->
+    <div class="field">
+      <label for="spend">On average, how much are you willing to spend on one drink?</label>
+      <select id="spend" name="spend" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Under $3</option>
+        <option>$3–$5</option>
+        <option>$5–$7</option>
+        <option>More than $7</option>
+      </select>
+    </div>
 
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    </main>
-  </div>
+    <!-- Drive-through or Walk-in -->
+    <div class="field">
+      <label for="visit-preference">Do you prefer drive-through or walk-in?</label>
+      <select id="visit-preference" name="visit_preference" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Drive-through</option>
+        <option>Walk-in</option>
+      </select>
+    </div>
 
+    <!-- Food Order Frequency -->
+    <div class="field">
+      <label for="food-order">When you purchase coffee, do you order food as well?</label>
+      <select id="food-order" name="food_order" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Always</option>
+        <option>Usually</option>
+        <option>Sometimes</option>
+        <option>Never</option>
+      </select>
+    </div>
+
+    <!-- Coffee Shop Experience -->
+    <div class="field">
+      <label for="experience">What do you look for in the perfect coffee shop experience?</label>
+      <textarea id="experience" name="experience" maxlength="150" rows="3" placeholder="Your thoughts (150 characters max)" required></textarea>
+      <small class="help">150 character limit</small>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+  
   <footer>
     <p><small><i>Copyright &copy; 2025 Jessi’s Coffee Co.</i></small></p>
     <p><small><i>Contact: <a href="mailto:jessi.anderson@example.com">Jessi Anderson</a></i></small></p>
